@@ -2,7 +2,7 @@ import { Button, theme, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import LangSwitcher from "containers/layout/Topbar/LangSwitcher";
-
+import logo from './../assets/svg/logo.svg'
 const { Paragraph } = Typography;
 
 function Home() {
@@ -18,7 +18,7 @@ function Home() {
               width={300}
               height={146}
               className="h-[64px] w-auto"
-              src="/icon/logo.svg"
+              src={logo.src}
             />
           </div>
           <ul className="flex gap-3 items-center">
