@@ -2,7 +2,7 @@ import { Button, theme, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import LangSwitcher from "containers/layout/Topbar/LangSwitcher";
-import logo from './../assets/svg/logo.svg'
+import logo from './../assets/logo/logo.png'
 const { Paragraph } = Typography;
 
 function Home() {
