@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+  font-family: 'ExtraBold';
+  src: url('./assets/fonts/Nunito-ExtraBold.woff');
+  src: url('./assets//fonts/Nunito-ExtraBold.woff2') format('woff2'), url('./assets/fonts/Nunito-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SemiBold';
+  src: url("./assets/fonts/Nunito-SemiBold.woff");
+  src: url("./assets/fonts/Nunito-SemiBold.woff2") format('woff2'), url("./assets/fonts/Nunito-SemiBold.woff") format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bold';
+  src: url("./assets/fonts/Nunito-Bold.woff");
+  src: url("./assets//fonts//Nunito-Bold.woff2") format('woff2'), url("./assets/fonts/Nunito-Bold.woff") format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url("./assets//fonts/Nunito-Regular.woff");
+  src: url("./assets//fonts/Nunito-Regular.woff2") format('woff2'), url("./assets//fonts/Nunito-Regular.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Medium';
+  src: url("./assets//fonts//Nunito-Medium.woff");
+  src: url("./assets/fonts/Nunito-Medium.woff2") format('woff2'), url("./assets//fonts//Nunito-Medium.woff") format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f126;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+* {
+  /* position: relative; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root, .App {
+  min-height: 100dvh;
+}
+
+body {
+  background-color: #fff !important;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html[dir="rtl"] *,
+.ar-font {
+  font-family: "Noto Kufi Arabic", sans-serif !important;
+}
+
+.overlay {
+  box-shadow: 0 0 1rem 0 rgb(0 0 0 / 7%);
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  height: calc(100dvh - 20px);
+  top: 10px;
+  margin: 0 10px;
+}
+
+.overlay:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  filter: blur(10px);
+  margin: -20px;
+}
+
+/* antd override  */
+.ant-table-body {
+  /* overflow: auto !important; */
+}
+
+.ant-table-container .ant-table-sticky-scroll {
+  height: 0 !important;
+}
+
+.ant-popover .ant-popover-content {
+  margin: 0 0.5rem;
+}
+
+html[dir="rtl"] :is(.ant-pagination-prev, .ant-pagination-next) {
+  /* transform: rotate(180deg); */
+}
+
+.ant-popover .ant-popover-inner {
+  padding: 0.25rem;
+}
+
+.ant-menu-item {
+  transition: border-color 0.3s, background 0.3s,
+    padding 0s cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+}
+
+.ant-menu-title-content {
+  transition: none !important;
+}
+
+/* fix table header dissapper when scrolled  */
+.ant-table-header>table {
+  visibility: visible !important;
+}
+
+/* badge ribbon to top  */
+.ant-ribbon {
+  top: -10px;
+}
+
+/* popconfirm margin  */
+.ant-popconfirm-inner-content {
+  margin: 10px;
+}
+
+/* menu sub */
+.ant-menu-submenu-title {
+  padding-left: 10px !important;
+  /* display: flex; */
+  /* justify-content: space-around; */
+  padding-right: 10px !important;
+  margin: 6px !important;
+  width: calc(100% - 12px) !important;
+}
+
+.ant-menu-submenu-title>svg {
+  width: 100%;
+}
+
+.ant-layout {
+  background-color: #fff;
+}
