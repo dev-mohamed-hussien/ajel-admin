@@ -14751,11 +14751,6 @@ react-router-dom@6.11.2:
     "@remix-run/router" "1.6.2"
     react-router "6.11.2"
 
-react-router-filebased@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-router-filebased/-/react-router-filebased-1.1.2.tgz#cd5f9f2d122fc42c5f14d5d8781ba58511a1c270"
-  integrity sha512-l1bxr4QDC+IDogjLKncSODHpqFq9P1plfeyK8iA73WrPuDMYwMPB2lT5IKJ3zDtL5sat2wWU7bv2+BJCHO17Cg==
-
 react-router@6.11.2:
   version "6.11.2"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.11.2.tgz#006301c4da1a173d7ad76b7ecd2da01b9dd3837a"

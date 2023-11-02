@@ -8,7 +8,8 @@ import AppLocale from "utlis/config/translation";
 import { IntlProvider } from "react-intl";
 import { useEffect } from "react";
 import ToastProvider from "components/ToastProvider";
-import { FileBasedProvider } from "react-router-filebased";
+import RoutersProvider from "utlis/navigation/provider/routers";
+// import { FileBasedProvider } from "react-router-filebased";
 type Locale = keyof typeof AppLocale;
 
 function AppProvider() {
@@ -51,7 +52,7 @@ function AppProvider() {
           }}
         >
           {/* <RoutersProvider /> */}
-          <FileBasedProvider />
+          <RoutersProvider />
           <ToastProvider />
         </ConfigProvider>
       </IntlProvider>
