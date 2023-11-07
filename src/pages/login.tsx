@@ -65,6 +65,7 @@ function Login() {
             success: (res) => {
               setLoading(false);
               const { accessToken, data, message } = res.data;
+              console.log({data})
 
               dispatch(login(accessToken));
               if (data.permissions) {

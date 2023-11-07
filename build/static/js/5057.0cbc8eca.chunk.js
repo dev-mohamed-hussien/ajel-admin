@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkAjel_admin=self.webpackChunkAjel_admin||[]).push([[5057],{5057:function(e,n,s){s.r(n);var c=s(3560),t=(s(7313),s(6417));n.default=function(){return(0,t.jsx)("div",{className:" h-screen flex items-center justify-center",children:(0,t.jsx)(c.Z,{})})}}}]);
