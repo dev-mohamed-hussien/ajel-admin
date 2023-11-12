@@ -48,7 +48,7 @@ function Login() {
 
     // dispatch(login("token"));
 
-    const myPromise = axios["post"]("/login", values, {
+    const myPromise = axios["post"]("account/login", values, {
       headers: {
         "X-Portal": "dashboard",
       },
@@ -64,17 +64,26 @@ function Login() {
             ),
             success: (res) => {
               setLoading(false);
-              const { accessToken, data, message } = res.data;
-              console.log({data})
-
-              dispatch(login(accessToken));
-              if (data.permissions) {
-                data.permissions = permissionsTransform(data.permissions);
-              }
-              dispatch(fetchProfileDataSuccess(data));
-    // navigate('/reset-password')
-
-              return message || "Backend Message Error Occured";
+              const { accessToken, message } = res.data;
+    
+              axios["get"]("account/info", {
+                headers: {
+                  "X-Portal": "dashboard",
+                  Authorization: `Bearer ${accessToken}`,
+                  
+                },
+              }).then((resp)=>{
+                const {  data } = resp.data;
+                
+                if (data.roles[0]) {
+                  
+                  const allPermissions = data.roles.reduce((prev,curr)=>prev.permissions.concat(curr.permissions))
+                  data.permissions = permissionsTransform(allPermissions.map(el=>({name:el})));
+                }
+                dispatch(fetchProfileDataSuccess(data));
+                dispatch(login(accessToken));
+              })
+              return message || "Success Login";
             },
             error: (err) => {
               setLoading(false);

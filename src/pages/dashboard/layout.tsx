@@ -28,7 +28,7 @@ function DashboardLayout({ children, ...props }: { children?: any }) {
   const location = useLocation();
   const { idToken } = useSelector((state: any) => state.Auth);
   useEffect(() => {
-    axios["get"](`profile`, {
+    axios["get"](`account/info`, {
       headers: {
         "X-Portal": "dashboard",
         Authorization: `Bearer ${idToken}`,
@@ -36,9 +36,11 @@ function DashboardLayout({ children, ...props }: { children?: any }) {
     })
       .then((response) => {
         const { data } = response.data;
-        if (data.permissions) {
-          data.permissions = permissionsTransform(data.permissions);
-        }
+        const allPermissions = data.roles.reduce((prev,curr)=>prev.permissions.concat(curr.permissions))
+        data.permissions = permissionsTransform(allPermissions.map(el=>({name:el})));
+        // if (data.permissions) {
+        //   data.roles.permissions = permissionsTransform(data.permissions);
+        // }
         // dispatch(fetchProfileDataSuccess(data));
       })
       .catch((error) => {});
@@ -111,7 +113,7 @@ function DashboardLayout({ children, ...props }: { children?: any }) {
           >
             <Content style={{ overflow: "initial" }}>
               <div
-                className=""
+                className="px-4 py-16"
                 style={{
                   minHeight: "calc(100dvh - ( 56px + 45px))",
                 }}

@@ -19,7 +19,7 @@ import { getPermissions } from "utlis/library/helpers/permissions";
 import {
   FaBookOpen,
   FaFileImport,
-  FaShoppingBag,
+  FaTools,
   FaStore,
   FaUsers,
 } from "react-icons/fa";
@@ -43,6 +43,26 @@ const getMenuItems: (profile) => MenuItem[] = (profile) => [
     icon: <AiOutlineHome />,
     disabled: false,
     hidden:false,
+  },
+  
+
+  {
+    key: "tools",
+
+    label: <FormattedMessage id={"tools"} />,
+    icon: <FaTools />,
+    disabled: false,
+    hidden: false,
+    children: [
+      {
+        key: "BusinessCategories",
+        to: "BusinessCategories",
+        label: <FormattedMessage id={"BusinessCategories"} />,
+        // icon: <FaFileImport />,
+        disabled: false,
+        hidden: false,
+      },
+    ],
   },
 
   {

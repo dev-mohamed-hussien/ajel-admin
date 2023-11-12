@@ -7,7 +7,7 @@ export const URL = "https://ajel.appssquare.com";
 const instance = axios.create({
   baseURL: `${URL}/`,
   headers: {
-    // Authorization: `Bearer ${localStorage.getItem("idToken")}`,
+    Authorization: `Bearer ${localStorage.getItem("idToken")}`,
     "X-Language": store.getState()?.LanguageSwitcher?.language?.locale ?? "en",
     "Accept-Language":
       store.getState()?.LanguageSwitcher?.language?.locale ?? "en",

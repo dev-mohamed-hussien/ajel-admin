@@ -131,8 +131,8 @@ const navigate = useNavigate()
 
                       item.to && navigate(item.to);
                     } else {
-                      // setCollapsed((old) => !old);
-
+                      if(collapsed===true)
+                      setCollapsed((old) => false);
                     }
 
                     setSubList({

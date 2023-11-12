@@ -128,7 +128,7 @@ const [query, setQuery] = useQuery(
     }
     setLoading(true);
     axios
-      .get(`/${url}`, {
+      .get(`/api/${url}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

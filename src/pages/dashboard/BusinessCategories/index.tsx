@@ -18,11 +18,11 @@ import middleware from "utlis/navigation/mw";
 import PermissionGuard from "middlewares/Permissions";
 import { getPermissions } from "utlis/library/helpers/permissions";
 export const config = {
-  add: { url: "job-titles", method: "post", type: "create" },
-  edit: { url: "job-titles", method: "put", type: "update" },
-  delete: { url: "job-titles", method: "delete", type: "delete" },
+  add: { url: "BusinessCategories", method: "post", type: "create" },
+  edit: { url: "BusinessCategories", method: "put", type: "update" },
+  delete: { url: "BusinessCategories", method: "delete", type: "delete" },
   findOne: {
-    url: "job-titles",
+    url: "BusinessCategories",
     method: "get",
     type: "read",
   },
@@ -40,7 +40,7 @@ const Index: React.FC = () => {
 
   const deleteItem = (id) => {
     toast.promise(
-      axios[config.delete.method](`${config.delete.url}/${id}`, {
+      axios[config.delete.method](`/api/${config.delete.url}/${id}`, {
         headers: {
           "X-Portal": "dashboard",
           Authorization: `Bearer ${idToken}`,
@@ -63,7 +63,7 @@ const Index: React.FC = () => {
   return (
     <MainTable
       config={config}
-      url="job-titles"
+      url="BusinessCategories"
       refresher={refresher}
       addURL={"add"}
       cols={generateCols([
@@ -152,6 +152,4 @@ const Index: React.FC = () => {
   );
 };
 
-export default middleware(Index, [
-  PermissionGuard(config.findOne.url, config.findOne.type),
-]);
+export default (Index);

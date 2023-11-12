@@ -3,12 +3,12 @@ const localeProfile = JSON.parse(localStorage.getItem("profile"));
 export function permissionsTransform(perm) {
   let permissions = {};
   perm.forEach((data) => {
-    if (typeof permissions[data.name.split("_")[1]] != "object") {
-      permissions[data.name.split("_")[1]] = {};
+    if (typeof permissions[data.name.split(".")[1]] != "object") {
+      permissions[data.name.split(".")[1]] = {};
     }
     Object.defineProperty(
-      permissions[data.name.split("_")[1]],
-      data.name.split("_")[0],
+      permissions[data.name.split(".")[1]],
+      data.name.split(".")[0],
       {
         enumerable: true,
         configurable: true,
