@@ -18,7 +18,7 @@ function Home() {
               width={300}
               height={146}
               className="h-[64px] w-auto"
-              src={logo.src}
+              src={logo}
             />
           </div>
           <ul className="flex gap-3 items-center">

@@ -20,30 +20,12 @@ curlirize(instance);
 instance.interceptors.request.use((req) => {
   return req;
 });
-instance.interceptors.response.use(
-  (res) => {
-    return res;
-  },
+// instance.interceptors.response.use(
+//   (res) => {
+//     return res;
+//   },
 
-  (err) => {
-    if (
-      err &&
-      err.response &&
-      err.response.status === 403 &&
-      err.response.config.url !== "/login"
-    ) {
-      // window.localStorage.removeItem("");
-      // window.location.replace("/");
-    } else if (
-      err.response.status === 401 &&
-      err.response.config.url !== "/login"
-    ) {
-      // window.localStorage.removeItem("mitcvAdminToken");
-      // window.location.replace("/");
-    } else {
-      return Promise.reject(err);
-    }
-  }
-);
+ 
+// );
 
 export default instance;

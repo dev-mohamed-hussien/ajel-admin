@@ -24,6 +24,7 @@ import { FormattedMessage } from "react-intl";
 import { Typography } from "antd";
 import { permissionsTransform } from "utlis/library/helpers/permissions";
 import { useNavigate } from "react-router-dom";
+import logo from './../assets/logo/logo.png'
 const { Title } = Typography;
 
 const { login } = authAction;
@@ -86,8 +87,9 @@ function Login() {
               return message || "Success Login";
             },
             error: (err) => {
+              console.log(err)
               setLoading(false);
-              return err.response?.data?.message || "Backend Error Occured";
+              return err.response?.data?.detail || "Backend Error Occured";
             },
           },
           {
@@ -133,7 +135,7 @@ function Login() {
               width={300}
               height={146}
               className="h-[64px] w-auto"
-              src="/icon/"
+              src={logo}
               style={{
                 filter:
                   selectedTheme === "darkAlgorithm" ? "contrast(0.5)" : "",
