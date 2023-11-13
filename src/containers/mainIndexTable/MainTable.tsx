@@ -135,7 +135,7 @@ const [query, setQuery] = useQuery(
         params,
       })
       .then((res) => {
-        setData(res.data.data);
+        setData(res.data);
 if(typeof getData === 'function'){
 
   getData(res.data)

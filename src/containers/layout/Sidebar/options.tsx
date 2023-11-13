@@ -56,15 +56,27 @@ const getMenuItems: (profile) => MenuItem[] = (profile) => [
     children: [
       {
         key: "BusinessCategories",
-        to: "BusinessCategories",
+        to: "business-categories",
         label: <FormattedMessage id={"BusinessCategories"} />,
+        // icon: <FaFileImport />,
+        disabled: false,
+        hidden: false,
+      },
+      {
+        key: "SalesCategories",
+        to: "sales-categories",
+        label: <FormattedMessage id={"SalesCategories"} />,
         // icon: <FaFileImport />,
         disabled: false,
         hidden: false,
       },
     ],
   },
-
+  
+  
+  
+  
+  
   {
     key: "merchant-managment",
 
@@ -74,34 +86,50 @@ const getMenuItems: (profile) => MenuItem[] = (profile) => [
     hidden: false,
     children: [
       {
-        key: "Accounts",
-        to: "Accounts",
-        label: <FormattedMessage id={"Accounts"} />,
+        key: "Plans",
+        to: "plans",
+        label: <FormattedMessage id={"Plans"} />,
         icon: <FaUsers />,
         disabled: false,
         hidden: false,
       },
 
       {
-        key: "Onboarding",
-        to: "Onboarding",
-        label: <FormattedMessage id={"Onboarding"} />,
+        key: "Platforms",
+        to: "platforms",
+        label: <FormattedMessage id={"Platforms"} />,
         // icon: <RiShipLine />,
         disabled: false,
         hidden: false,
       },
       {
-        key: "Performance",
-        to: "Performance",
-        label: <FormattedMessage id={"Performance"} />,
+        key: "Charges",
+        to: "charges",
+        label: <FormattedMessage id={"Charges"} />,
         // icon: <FaFileImport />,
         disabled: false,
         hidden: false,
       },
       {
-        key: "Payments",
-        to: "Payments",
-        label: <FormattedMessage id={"Payments"} />,
+        key: "Eligibilities",
+        to: "eligibilities",
+        label: <FormattedMessage id={"Eligibilities"} />,
+        // icon: <FaFileImport />,
+        disabled: false,
+        hidden: false,
+      },
+      {
+        key: "Returns",
+        to: "returns",
+        label: <FormattedMessage id={"Returns"} />,
+        // icon: <FaFileImport />,
+        disabled: false,
+        hidden: false,
+      },
+      {
+        key: "AnnualSales",
+        to: "annualSales",
+        label: <FormattedMessage id={"AnnualSales"} />,
         // icon: <FaFileImport />,
         disabled: false,
         hidden: false,
@@ -109,153 +137,90 @@ const getMenuItems: (profile) => MenuItem[] = (profile) => [
     ],
   },
 
-  {
-    key: "stores-managment",
 
-    label: <FormattedMessage id={"--"} />,
-    icon: <FaStore />,
+  {
+    key: "Settings",
+
+    label: <FormattedMessage id={"Settings"} />,
+    icon: <FaTools />,
     disabled: false,
     hidden: false,
     children: [
       {
-        key: "Locations",
-        to: "Locations",
-        label: <FormattedMessage id={"Locations"} />,
+        key: "Roles",
+        to: "roles",
+        label: <FormattedMessage id={"Roles"} />,
         icon: <FaUsers />,
         disabled: false,
         hidden: false,
       },
-
       {
-        key: "Inventory",
-        to: "Inventory",
-        label: <FormattedMessage id={"Inventory"} />,
+        key: "Permissions",
+        to: "permissions",
+        label: <FormattedMessage id={"Permissions"} />,
+        icon: <FaUsers />,
+        disabled: false,
+        hidden: false,
+      },
+      {
+        key: "general-settings",
+        to: "general-settings",
+        label: <FormattedMessage id={"general-settings"} />,
+        icon: <FaUsers />,
+        disabled: false,
+        hidden: false,
+      },
+      {
+        key: "Users",
+        to: "users",
+        label: <FormattedMessage id={"Users"} />,
         // icon: <RiShipLine />,
         disabled: false,
         hidden: false,
       },
       {
-        key: "Performance",
-        to: "Performance",
-        label: <FormattedMessage id={"Performance"} />,
+        key: "Cities",
+        to: "cities",
+        label: <FormattedMessage id={"Cities"} />,
         // icon: <FaFileImport />,
         disabled: false,
         hidden: false,
       },
       {
-        key: "Promotions",
-        to: "Promotions",
-        label: <FormattedMessage id={"Promotions"} />,
-        // icon: <FaFileImport />,
-        disabled: false,
-        hidden: false,
-      },
-    ],
-  },
-
-  {
-    key: "customers-managment",
-
-    label: <FormattedMessage id={"--"} />,
-    icon: <FaUsers />,
-    disabled: false,
-    hidden: false,
-    children: [
-      {
-        key: "Accounts",
-        to: "Accounts",
-        label: <FormattedMessage id={"Accounts"} />,
-        icon: <FaUsers />,
-        disabled: false,
-        hidden: false,
-      },
-
-      {
-        key: "Segmentation",
-        to: "Segmentation",
-        label: <FormattedMessage id={"Segmentation"} />,
-        // icon: <RiShipLine />,
-        disabled: false,
-        hidden: false,
-      },
-      {
-        key: "Metrics",
-        to: "Metrics",
-        label: <FormattedMessage id={"Metrics"} />,
+        key: "Contributors",
+        to: "contributors",
+        label: <FormattedMessage id={"Contributors"} />,
         // icon: <FaFileImport />,
         disabled: false,
         hidden: false,
       },
       {
-        key: "Feedback",
-        to: "Feedback",
-        label: <FormattedMessage id={"Feedback"} />,
+        key: "BusinessTypes",
+        to: "businessTypes",
+        label: <FormattedMessage id={"BusinessTypes"} />,
+        // icon: <FaFileImport />,
+        disabled: false,
+        hidden: false,
+      },
+      {
+        key: "Currencies",
+        to: "currencies",
+        label: <FormattedMessage id={"Currencies"} />,
         // icon: <FaFileImport />,
         disabled: false,
         hidden: false,
       },
     ],
   },
-  {
-    key: "transaction-tracking",
 
-    label: <FormattedMessage id={"--"} />,
-    icon: <IoMdSchool />,
-    disabled: false,
-    hidden: false,
-    children: [
-      {
-        key: "History",
-        to: "History",
-        label: <FormattedMessage id={"History"} />,
-        icon: <FaUsers />,
-        disabled: false,
-        hidden: false,
-      },
 
-      {
-        key: "Refunds",
-        to: "Refunds",
-        label: <FormattedMessage id={"Refunds"} />,
-        // icon: <RiShipLine />,
-        disabled: false,
-        hidden: false,
-      },
-      {
-        key: "Payments",
-        to: "Payments",
-        label: <FormattedMessage id={"Payments"} />,
-        // icon: <FaFileImport />,
-        disabled: false,
-        hidden: false,
-      },
-      {
-        key: "Fraud Detection",
-        to: "Fraud Detection",
-        label: <FormattedMessage id={"Fraud Detection"} />,
-        // icon: <FaFileImport />,
-        disabled: false,
-        hidden: false,
-      },
-    ],
-  },
-  {
-    key: "Report-Analytics",
 
-    label: <FormattedMessage id={"--"} />,
-    icon: <AiOutlineAreaChart />,
-    disabled: false,
-    hidden: false,
-    children: [
-      {
-        key: "Sales Report",
-        to: "Sales Report",
-        label: <FormattedMessage id={"Sales Report"} />,
-        icon: <FaUsers />,
-        disabled: false,
-        hidden: false,
-      },
-    ],
-  },
+
+  
+
 ];
 export default getMenuItems;
+
+
+                
+                

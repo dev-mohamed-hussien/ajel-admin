@@ -49,5 +49,4 @@ const Index: React.FC = () => {
     />
   );
 };
-
-export default middleware(Index, [PermissionGuard("permissions", "read")]);
+export default  Index

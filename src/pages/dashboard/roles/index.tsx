@@ -145,6 +145,4 @@ const Index: React.FC = () => {
   );
 };
 
-export default middleware(Index, [
-  PermissionGuard(config.findOne.url, config.findOne.type),
-]);
+export default Index
